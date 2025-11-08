@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -112,12 +112,12 @@ TextureImporter:
       name: Lancer_Right_Attack_0
       rect:
         serializedVersion: 2
-        x: 143
-        y: 121
-        width: 165
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 144
+        y: 122
+        width: 163
+        height: 73
+      alignment: 9
+      pivot: {x: 0.12830189, y: 0.08753716}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: Lancer_Right_Attack_1
       rect:
         serializedVersion: 2
-        x: 463
-        y: 121
-        width: 157
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 464
+        y: 122
+        width: 164
+        height: 73
+      alignment: 9
+      pivot: {x: 0.12385113, y: 0.07747702}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,37 +153,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lancer_Right_Attack_2
-      rect:
-        serializedVersion: 2
-        x: 611
-        y: 141
-        width: 17
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a942bff0433e46c0800000000000000
-      internalID: -4157329051755591257
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Lancer_Right_Attack_3
       rect:
         serializedVersion: 2
-        x: 760
-        y: 121
-        width: 152
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 761
+        y: 122
+        width: 150
+        height: 75
+      alignment: 9
+      pivot: {x: 0.2723405, y: 0.08384827}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,7 +178,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 68647d5337077a04ba8d0577e2f6e124
     internalID: 0
     vertices: []
     indices: 

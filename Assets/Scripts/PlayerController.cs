@@ -1,28 +1,37 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public float Speed;
+    public int MaxHp = 20;
+    public int currentHp;
 
-    Vector3 up = new Vector3(0, 1, 0);
+    public float Speed;
+    public float ProyectileSpeed;
+    public GameObject Arrow;
+
+    public Slider hpBar;
+    public GameObject GameOverPanel;
+
     void Start()
     {
-       // +
-       // -
-       // /
-       // %   7 % 3
-       // +=
-       // ++
-       // --
-        // -=
-
-        // (0,1,0)
+        currentHp = MaxHp;
+        hpBar.maxValue = MaxHp;
+        hpBar.minValue = 0;
+        hpBar.value = currentHp;
     }
 
-    
     void Update()
     {
-        if(Input.GetKey(KeyCode.W))
+        if(Input.GetMouseButtonDown(0))
+        {
+            ShootArrowMechanic();
+        }
+        MovementMechanic();
+    }
+    public void MovementMechanic()
+    {
+        if (Input.GetKey(KeyCode.W))
         {
             transform.position += Vector3.up * Speed * Time.deltaTime;
         }
@@ -38,5 +47,32 @@ public class PlayerController : MonoBehaviour
         {
             transform.position += Vector3.right * Speed * Time.deltaTime;
         }
+    }
+    public void ShootArrowMechanic()
+    {
+        Vector3 MouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+       
+        Vector2 direction = (MouseWorldPos - transform.position).normalized;
+
+        GameObject arrow = Instantiate(Arrow,transform.position,Quaternion.identity);
+
+        arrow.GetComponent<Rigidbody2D>().linearVelocity = direction * ProyectileSpeed;
+
+        float angle = Mathf.Atan2(direction.y , direction.x) * Mathf.Rad2Deg;
+
+        arrow.transform.rotation = Quaternion.Euler(0,0, angle);
+
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHp -= damage;
+        if (currentHp < 0)
+        {
+            currentHp = 0;
+            print("GameOver");
+            GameOverPanel.SetActive(true);
+        }
+        hpBar.value = currentHp;
     }
 }
